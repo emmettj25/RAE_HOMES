@@ -42,4 +42,188 @@
     .about-image-wrap { position: relative; }
     .about-img-accent { position: absolute; top: -16px; left: -16px; width: 60%; height: 60%; border: 1px solid rgba(139,98,66,0.3); pointer-events: none; }
     .about-img { width: 100%; display: block; border: 1px solid rgba(139,98,66,0.15); }
-    #contact {
+    #contact { padding: 90px 60px; background: var(--off-white); }
+    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact-subtitle { font-size: 16px; line-height: 1.75; color: var(--warm-gray); margin-bottom: 16px; }
+    .contact-email { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 3px; margin-bottom: 48px; transition: border-color 0.2s, color 0.2s; }
+    .contact-email:hover { border-color: var(--brown); color: var(--brown-light); }
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 500px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-image-wrap { display: none; }
+      .hero-content { padding: 0 28px 40px; }
+      .hero-buttons { flex-direction: column; align-items: flex-start; gap: 10px; }
+      #services, #about, #contact { padding: 60px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png" alt="RAE Homes" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="/remodels/">Remodels</a></li>
+    <li><a href="/adu/">ADUs</a></li>
+    <li><a href="/new-construction/">New Construction</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="#contact" class="cta-link">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/remodels/">Remodels</a>
+  <a href="/adu/">ADUs</a>
+  <a href="/new-construction/">New Construction</a>
+  <a href="/about/">About</a>
+  <a href="#contact" class="cta">Contact</a>
+</nav>
+
+<section class="hero" id="top">
+  <img class="hero-img" src="/images/banner.jpg" alt="RAE Homes – Denver Custom Homes" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-cta">
+      <span class="hero-location">Denver, Colorado</span>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Build With Us</a>
+        <a href="#services" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <a class="service-card" href="/remodels/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/remodel.jpg" alt="Home Remodels" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">Remodels</p>
+        <h3 class="service-title">From a single room to a full transformation</h3>
+        <p class="service-desc">From single bathrooms to full home remodels, we love helping our clients create space, improve their lifestyle, and transform their home.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+    <a class="service-card" href="/adu/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/adu.jpg" alt="ADU Construction" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">ADUs</p>
+        <h3 class="service-title">Accessory Dwelling Units built right</h3>
+        <p class="service-desc">Need a place for family, or thinking about adding a rental? We are well versed in the design challenges and city requirements to build an ADU in Denver.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+    <a class="service-card" href="/new-construction/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/new-construction.jpg" alt="New Home Construction" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">New Construction</p>
+        <h3 class="service-title">Your dream home, built from the ground up</h3>
+        <p class="service-desc">Building a custom home is exciting but daunting. RAE Homes acts as your partner and collaborator from first blueprint to final walkthrough.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <p class="about-kicker">Who We Are</p>
+      <h2 class="about-heading">Real people.<br><em>Real craftsmanship.</em></h2>
+      <p class="about-body">RAE Homes is a Denver-based general contractor focused on doing the work right. We keep things straight with our clients — honest timelines, fair pricing, and quality that lasts. No fluff, no shortcuts.</p>
+      <p class="about-body">We handle everything from kitchen remodels and bathroom renovations to new home builds and ADUs across the Denver metro. If you want a contractor you can actually trust, we'd love to talk.</p>
+      <div class="about-stats">
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Projects Completed</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Licensed &amp; Insured</div></div>
+        <div class="stat"><div class="stat-num">CO</div><div class="stat-label">Denver &amp; Front Range</div></div>
+      </div>
+    </div>
+    <div class="about-image-wrap">
+      <div class="about-img-accent"></div>
+      <img class="about-img" src="/images/remodel.jpg" alt="RAE Homes craftsmanship" />
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Build Together</h2>
+    <p class="contact-subtitle">Ready to start your project? Drop us a message and we'll get back to you within one business day.</p>
+    <a href="mailto:kyle@raehomesco.com" class="contact-email">kyle@raehomesco.com</a>
+    <form class="contact-form" name="contact" method="POST" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="subject">Project Type</label>
+        <select id="subject" name="subject">
+          <option value="">Select a service...</option>
+          <option>Remodel</option>
+          <option>ADU</option>
+          <option>New Construction</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="/images/logo.png" alt="RAE Homes" />
+  </div>
+  <p class="footer-copy">© 2026 RAE Homes &nbsp;·&nbsp; Denver, Colorado &nbsp;·&nbsp; Licensed &amp; Insured</p>
+  <ul class="footer-links">
+    <li><a href="/remodels/">Remodels</a></li>
+    <li><a href="/adu/">ADUs</a></li>
+    <li><a href="/new-construction/">New Construction</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Message Sent ✓'; e.target.reset();
+      setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; }, 3000);
+    }, 1200);
+  }
+</script>
+</body>
+</html>
