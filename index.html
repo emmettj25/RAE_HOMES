@@ -3,83 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – RAE Homes Denver</title>
-  <meta name="description" content="RAE Homes is a Denver-based general contractor. Real people, honest work, quality that lasts. Learn about who we are and how we work." />
+  <title>RAE Homes – Denver Custom Homes & Remodels</title>
+  <meta name="description" content="RAE Homes is a Denver-based general contractor specializing in remodels, ADUs, and new construction. Honest work, fair pricing, quality that lasts." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .content-section { padding: 80px 60px; background: var(--off-white); }
-    .content-section.dark { background: var(--black); }
-    .content-inner { max-width: 1100px; margin: 0 auto; }
-
-    .about-lead {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: start;
+    .hero {
+      margin-top: var(--nav-h);
+      position: relative; height: 62vh; min-height: 380px; overflow: hidden;
     }
-    .lead-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4vw, 56px); font-weight: 300;
-      color: var(--black); line-height: 1.1; margin-bottom: 0;
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%; display: block;
+      animation: heroZoom 12s ease-out forwards;
     }
-    .lead-heading em { font-style: italic; color: var(--brown); }
-    .lead-body { font-size: 16px; line-height: 1.85; color: var(--warm-gray); }
-    .lead-body p { margin-bottom: 18px; }
-    .lead-body p:last-child { margin-bottom: 0; }
-
-    .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--mid-gray);
-      border: 1px solid var(--mid-gray);
-      margin-top: 0;
+    @keyframes heroZoom {
+      from { transform: scale(1.06); }
+      to   { transform: scale(1.00); }
     }
-    .value-item {
-      background: #fff; padding: 36px 32px;
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(17,17,16,0.15) 0%, rgba(17,17,16,0.4) 55%, rgba(17,17,16,0.72) 100%);
     }
-    .value-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.1em; color: var(--brown);
-      margin-bottom: 14px;
+    .hero-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0 60px 52px;
     }
-    .value-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 600;
-      color: var(--black); margin-bottom: 10px;
-    }
-    .value-body { font-size: 14px; line-height: 1.75; color: var(--warm-gray); }
-
-    .stats-band {
-      padding: 64px 60px; background: var(--brown);
-      display: flex; justify-content: center; gap: 80px;
-      flex-wrap: wrap;
-    }
-    .band-stat { text-align: center; }
-    .band-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 56px; font-weight: 300; color: #fff; line-height: 1;
-    }
-    .band-label {
+    .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .hero-location {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(255,255,255,0.65); margin-top: 8px;
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
     }
-
-    .cta-strip { padding: 64px 60px; background: var(--black); text-align: center; }
-    .cta-strip h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 3vw, 40px); font-weight: 300;
-      color: #fff; margin-bottom: 24px;
+    .hero-buttons { display: flex; gap: 12px; align-items: center; }
+    #services { padding: 80px 60px; background: var(--off-white); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto;
     }
-
+    .service-card {
+      background: #fff; overflow: hidden;
+      border: 1px solid var(--mid-gray);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(17,17,16,0.12); }
+    .service-img-wrap { overflow: hidden; }
+    .service-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s; }
+    .service-card:hover .service-img { transform: scale(1.04); }
+    .service-body { padding: 24px 28px 32px; }
+    .service-name { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brown); margin-bottom: 8px; }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--black); margin-bottom: 10px; }
+    .service-desc { font-size: 14px; line-height: 1.75; color: var(--warm-gray); }
+    .service-link { display: inline-block; margin-top: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 2px; transition: border-color 0.2s; }
+    .service-link:hover { border-color: var(--brown); }
+    #about { padding: 90px 60px; background: var(--black); }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-kicker { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 14px; }
+    .about-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3vw, 44px); font-weight: 300; line-height: 1.2; color: #fff; margin-bottom: 24px; }
+    .about-heading em { font-style: italic; color: var(--brown-light); }
+    .about-body { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.62); margin-bottom: 18px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--brown-light); line-height: 1; }
+    .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 5px; }
+    .about-image-wrap { position: relative; }
+    .about-img-accent { position: absolute; top: -16px; left: -16px; width: 60%; height: 60%; border: 1px solid rgba(139,98,66,0.3); pointer-events: none; }
+    .about-img { width: 100%; display: block; border: 1px solid rgba(139,98,66,0.15); }
+    #contact { padding: 90px 60px; background: var(--off-white); }
+    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact-subtitle { font-size: 16px; line-height: 1.75; color: var(--warm-gray); margin-bottom: 16px; }
+    .contact-email { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 3px; margin-bottom: 48px; transition: border-color 0.2s, color 0.2s; }
+    .contact-email:hover { border-color: var(--brown); color: var(--brown-light); }
     @media (max-width: 900px) {
-      .content-section { padding: 56px 28px; }
-      .about-lead { grid-template-columns: 1fr; gap: 36px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .stats-band { padding: 48px 28px; gap: 40px; }
-      .cta-strip { padding: 56px 28px; }
+      .services-grid { grid-template-columns: 1fr; max-width: 500px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-image-wrap { display: none; }
+      .hero-content { padding: 0 28px 40px; }
+      .hero-buttons { flex-direction: column; align-items: flex-start; gap: 10px; }
+      #services, #about, #contact { padding: 60px 28px; }
     }
   </style>
 </head>
@@ -87,75 +90,23 @@
 
 <div id="site-nav"></div>
 
-<div class="page-hero" style="margin-top: var(--nav-h);">
-  <p class="page-hero-label">Who We Are</p>
-  <h1 class="page-hero-title">RAE Homes is built on <em>straight talk</em></h1>
-  <p class="page-hero-desc">Denver-based general contractor. No fluff, no runaround — just honest work and quality that holds up.</p>
-</div>
-
-<!-- ABOUT LEAD -->
-<section class="content-section">
-  <div class="content-inner">
-    <div class="about-lead">
-      <h2 class="lead-heading">Real people doing <em>real work</em> in Denver.</h2>
-      <div class="lead-body">
-        <p>RAE Homes started with a simple idea: build things right, treat people honestly, and let the work speak for itself. We're a Denver-based general contractor handling remodels, ADUs, and new custom home builds across the Front Range.</p>
-        <p>Most of our business comes from referrals — homeowners who've worked with us and wouldn't hesitate to call us again. That's the standard we hold ourselves to on every project.</p>
-        <p>We're not a massive operation. You get direct access to the people doing the work, real answers to your questions, and a team that shows up when they say they will.</p>
-        <a href="/#contact" class="btn-primary" style="margin-top: 8px; display: inline-block;">Get In Touch</a>
+<section class="hero" id="top">
+  <img class="hero-img" src="/images/banner.jpg" alt="RAE Homes – Denver Custom Homes" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-cta">
+      <span class="hero-location">Denver, Colorado</span>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Build With Us</a>
+        <a href="#services" class="btn-outline">View Our Work</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="content-section" style="padding-top: 0; padding-bottom: 80px;">
-  <div class="content-inner">
-    <div class="values-grid">
-      <div class="value-item">
-        <p class="value-num">01</p>
-        <h3 class="value-title">Honest Pricing</h3>
-        <p class="value-body">We give you a real number upfront, and we stick to it. If something changes, we tell you immediately — not after the fact.</p>
-      </div>
-      <div class="value-item">
-        <p class="value-num">02</p>
-        <h3 class="value-title">Clear Communication</h3>
-        <p class="value-body">You'll always know where your project stands. One point of contact, regular updates, no chasing people down for answers.</p>
-      </div>
-      <div class="value-item">
-        <p class="value-num">03</p>
-        <h3 class="value-title">Quality That Lasts</h3>
-        <p class="value-body">We build things the way we'd want our own homes built. That means using the right materials and not cutting corners where it counts.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS BAND -->
-<div class="stats-band">
-  <div class="band-stat">
-    <div class="band-num">10+</div>
-    <div class="band-label">Years in Denver</div>
-  </div>
-  <div class="band-stat">
-    <div class="band-num">50+</div>
-    <div class="band-label">Projects Completed</div>
-  </div>
-  <div class="band-stat">
-    <div class="band-num">100%</div>
-    <div class="band-label">Licensed &amp; Insured</div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-strip">
-  <h2>Want to work with people you can actually trust?</h2>
-  <a href="/#contact" class="btn-primary">Start a Conversation</a>
-</div>
-
-<div id="site-footer"></div>
-
-<script src="/nav.js"></script>
-<script>initPage('about');</script>
-</body>
-</html>
+<section id="services">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <a class="service-card" href="/remodels/">
+      <div class="service-img-wrap">
