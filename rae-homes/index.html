@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAE Homes – Denver Custom Homes & Remodels</title>
+  <meta name="description" content="RAE Homes is a Denver-based general contractor specializing in remodels, ADUs, and new construction. Honest work, fair pricing, quality that lasts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    .hero {
+      margin-top: var(--nav-h);
+      position: relative; height: 62vh; min-height: 380px; overflow: hidden;
+    }
+    .hero-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%; display: block;
+      animation: heroZoom 12s ease-out forwards;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.06); }
+      to   { transform: scale(1.00); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(17,17,16,0.15) 0%, rgba(17,17,16,0.4) 55%, rgba(17,17,16,0.72) 100%);
+    }
+    .hero-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0 60px 52px;
+    }
+    .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .hero-location {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .hero-buttons { display: flex; gap: 12px; align-items: center; }
+
+    /* ── SERVICES ── */
+    #services { padding: 80px 60px; background: var(--off-white); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .service-card {
+      background: #fff; overflow: hidden;
+      border: 1px solid var(--mid-gray);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(17,17,16,0.12);
+    }
+    .service-img-wrap { overflow: hidden; }
+    .service-img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+      transition: transform 0.4s;
+    }
+    .service-card:hover .service-img { transform: scale(1.04); }
+    .service-body { padding: 24px 28px 32px; }
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--brown); margin-bottom: 8px;
+    }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--black); margin-bottom: 10px;
+    }
+    .service-desc { font-size: 14px; line-height: 1.75; color: var(--warm-gray); }
+    .service-link {
+      display: inline-block; margin-top: 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--brown); text-decoration: none;
+      border-bottom: 1px solid rgba(139,98,66,0.35);
+      padding-bottom: 2px; transition: border-color 0.2s;
+    }
+    .service-link:hover { border-color: var(--brown); }
+
+    /* ── ABOUT ── */
+    #about { padding: 90px 60px; background: var(--black); }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--brown-light); margin-bottom: 14px;
+    }
+    .about-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 44px); font-weight: 300;
+      line-height: 1.2; color: #fff; margin-bottom: 24px;
+    }
+    .about-heading em { font-style: italic; color: var(--brown-light); }
+    .about-body { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.62); margin-bottom: 18px; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 28px; margin-top: 40px; padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 300; color: var(--brown-light); line-height: 1;
+    }
+    .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 5px; }
+    .about-image-wrap { position: relative; }
+    .about-img-accent {
+      position: absolute; top: -16px; left: -16px;
+      width: 60%; height: 60%;
+      border: 1px solid rgba(139,98,66,0.3); pointer-events: none;
+    }
+    .about-img { width: 100%; display: block; border: 1px solid rgba(139,98,66,0.15); }
+
+    /* ── CONTACT ── */
+    #contact { padding: 90px 60px; background: var(--off-white); }
+    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .contact-subtitle { font-size: 16px; line-height: 1.75; color: var(--warm-gray); margin-bottom: 16px; }
+    .contact-email {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; color: var(--brown);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139,98,66,0.35);
+      padding-bottom: 3px; margin-bottom: 48px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-email:hover { border-color: var(--brown); color: var(--brown-light); }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; max-width: 500px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-image-wrap { display: none; }
+      .hero-content { padding: 0 28px 40px; }
+      .hero-buttons { flex-direction: column; align-items: flex-start; gap: 10px; }
+      #services, #about, #contact { padding: 60px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="hero-img" src="/images/banner.jpg" alt="RAE Homes – Denver Custom Homes" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-cta">
+      <span class="hero-location">Denver, Colorado</span>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Build With Us</a>
+        <a href="#services" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label">What We Do</p>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+
+    <a class="service-card" href="/remodels/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/remodel.jpg" alt="Home Remodels" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">Remodels</p>
+        <h3 class="service-title">From a single room to a full transformation</h3>
+        <p class="service-desc">From single bathrooms to full home remodels, we love helping our clients create space, improve their lifestyle, and transform their home.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+
+    <a class="service-card" href="/adu/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/adu.jpg" alt="ADU Construction" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">ADUs</p>
+        <h3 class="service-title">Accessory Dwelling Units built right</h3>
+        <p class="service-desc">Need a place for family, or thinking about adding a rental? We are well versed in the design challenges and city requirements to build an ADU in Denver.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+
+    <a class="service-card" href="/new-construction/">
+      <div class="service-img-wrap">
+        <img class="service-img" src="/images/new-construction.jpg" alt="New Home Construction" />
+      </div>
+      <div class="service-body">
+        <p class="service-name">New Construction</p>
+        <h3 class="service-title">Your dream home, built from the ground up</h3>
+        <p class="service-desc">Building a custom home is exciting but daunting. RAE Homes acts as your partner and collaborator from first blueprint to final walkthrough.</p>
+        <span class="service-link">Learn More →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <p class="about-kicker">Who We Are</p>
+      <h2 class="about-heading">Real people.<br><em>Real craftsmanship.</em></h2>
+      <p class="about-body">RAE Homes is a Denver-based general contractor focused on doing the work right. We keep things straight with our clients — honest timelines, fair pricing, and quality that lasts. No fluff, no shortcuts.</p>
+      <p class="about-body">We handle everything from kitchen remodels and bathroom renovations to new home builds and ADUs across the Denver metro. If you want a contractor you can actually trust, we'd love to talk.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Licensed &amp; Insured</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">CO</div>
+          <div class="stat-label">Denver &amp; Front Range</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-wrap">
+      <div class="about-img-accent"></div>
+      <img class="about-img" src="/images/remodel.jpg" alt="RAE Homes craftsmanship" />
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Build Together</h2>
+    <p class="contact-subtitle">Ready to start your project? Drop us a message and we'll get back to you within one business day.</p>
+    <a href="mailto:kyle@raehomesco.com" class="contact-email">kyle@raehomesco.com</a>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="subject">Project Type</label>
+        <select id="subject" name="subject">
+          <option value="">Select a service...</option>
+          <option>Remodel</option>
+          <option>ADU</option>
+          <option>New Construction</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="/nav.js"></script>
+<script>initPage('home');</script>
+</body>
+</html>

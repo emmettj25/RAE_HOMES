@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADUs – RAE Homes Denver</title>
+  <meta name="description" content="RAE Homes builds Accessory Dwelling Units in Denver — from design through permits to final build. Family suites, rental units, and backyard cottages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .content-section { padding: 80px 60px; background: var(--off-white); }
+    .content-section.dark { background: var(--black); }
+    .content-inner { max-width: 1100px; margin: 0 auto; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .two-col.reverse { direction: rtl; }
+    .two-col.reverse > * { direction: ltr; }
+
+    .col-img { width: 100%; display: block; border: 1px solid var(--mid-gray); }
+    .col-img-dark { border-color: rgba(139,98,66,0.2); }
+    .col-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--brown); margin-bottom: 12px;
+    }
+    .col-kicker-light { color: var(--brown-light); }
+    .col-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 40px); font-weight: 400;
+      color: var(--black); line-height: 1.2; margin-bottom: 20px;
+    }
+    .col-heading-light { color: #fff; }
+    .col-body { font-size: 15px; line-height: 1.8; color: var(--warm-gray); margin-bottom: 14px; }
+    .col-body-light { color: rgba(255,255,255,0.6); }
+    .services-list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .services-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; line-height: 1.6; color: var(--warm-gray); list-style: none;
+    }
+    .services-list li::before {
+      content: '—'; color: var(--brown); flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    }
+
+    .process-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px; margin-top: 16px;
+    }
+    .process-step { padding: 32px 28px; background: #fff; border: 1px solid var(--mid-gray); }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px; font-weight: 300; color: var(--brown-light);
+      line-height: 1; margin-bottom: 14px;
+    }
+    .step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--black); margin-bottom: 10px;
+    }
+    .step-body { font-size: 14px; line-height: 1.7; color: var(--warm-gray); }
+
+    .cta-strip { padding: 64px 60px; background: var(--brown); text-align: center; }
+    .cta-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 3vw, 40px); font-weight: 300;
+      color: #fff; margin-bottom: 24px;
+    }
+    .cta-strip .btn-white {
+      display: inline-block; background: #fff; color: var(--brown);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; padding: 14px 40px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-strip .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+
+    @media (max-width: 900px) {
+      .content-section { padding: 56px 28px; }
+      .two-col { grid-template-columns: 1fr; gap: 36px; }
+      .two-col.reverse { direction: ltr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .cta-strip { padding: 48px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<div class="page-hero" style="margin-top: var(--nav-h);">
+  <p class="page-hero-label">Our Services</p>
+  <h1 class="page-hero-title">Accessory Dwelling <em>Units</em></h1>
+  <p class="page-hero-desc">Add a rental unit, house family, or create a dedicated workspace on your existing property. We handle the design, permits, and build — start to finish.</p>
+</div>
+
+<!-- INTRO -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="two-col">
+      <img class="col-img" src="/images/adu.jpg" alt="ADU floor plan by RAE Homes" />
+      <div>
+        <p class="col-kicker">What Is an ADU?</p>
+        <h2 class="col-heading">A Second Unit on Your Property</h2>
+        <p class="col-body">An Accessory Dwelling Unit (ADU) is a self-contained living space built on the same lot as your primary home. They can be attached, detached, or converted from existing space like a garage or basement.</p>
+        <p class="col-body">Denver has been actively expanding ADU allowances — many properties that couldn't build one a few years ago now can. We stay current on zoning rules and city requirements so you don't have to.</p>
+        <ul class="services-list">
+          <li>Detached backyard cottages</li>
+          <li>Garage conversions</li>
+          <li>Basement ADUs</li>
+          <li>Attached in-law suites</li>
+          <li>Design &amp; permitting support</li>
+          <li>Full build management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="content-section" style="background: #eee9e2; padding-top: 72px; padding-bottom: 72px;">
+  <div class="content-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Our ADU Process</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Site &amp; Zoning Review</div>
+        <p class="step-body">We evaluate your property, confirm what Denver zoning allows, and walk you through your options before you spend a dollar.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Design &amp; Permits</div>
+        <p class="step-body">We work with trusted architects and handle the permit process with the city — the part most homeowners dread, we do regularly.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Build &amp; Delivery</div>
+        <p class="step-body">Our crew handles the full build with regular updates and a clean jobsite. You get a finished, permitted unit ready to live in or rent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK SECTION -->
+<section class="content-section dark">
+  <div class="content-inner">
+    <div class="two-col reverse">
+      <img class="col-img col-img-dark" src="/images/remodel.jpg" alt="RAE Homes interior finish" />
+      <div>
+        <p class="col-kicker col-kicker-light">Why RAE Homes</p>
+        <h2 class="col-heading col-heading-light">We've Done This Before</h2>
+        <p class="col-body col-body-light">ADUs involve more moving parts than a standard remodel — zoning, design, structural work, utilities, and inspections all have to line up. We've navigated that process in Denver many times and know how to keep things on track.</p>
+        <p class="col-body col-body-light">You'll get straight answers about cost, timeline, and what's realistic for your property — from the first conversation.</p>
+        <a href="/#contact" class="btn-primary" style="margin-top: 24px; display: inline-block;">Talk to Us About Your Property</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>Thinking about adding an ADU?</h2>
+  <a href="/#contact" class="btn-white">Let's Talk</a>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="/nav.js"></script>
+<script>initPage('adu');</script>
+</body>
+</html>
