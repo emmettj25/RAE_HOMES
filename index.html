@@ -10,45 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .hero {
-      margin-top: var(--nav-h);
-      position: relative; height: 62vh; min-height: 380px; overflow: hidden;
-    }
-    .hero-img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%; display: block;
-      animation: heroZoom 12s ease-out forwards;
-    }
-    @keyframes heroZoom {
-      from { transform: scale(1.06); }
-      to   { transform: scale(1.00); }
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(17,17,16,0.15) 0%, rgba(17,17,16,0.4) 55%, rgba(17,17,16,0.72) 100%);
-    }
-    .hero-content {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 0 60px 52px;
-    }
+    .hero { margin-top: var(--nav-h); position: relative; height: 62vh; min-height: 380px; overflow: hidden; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; animation: heroZoom 12s ease-out forwards; }
+    @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.00); } }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(17,17,16,0.15) 0%, rgba(17,17,16,0.4) 55%, rgba(17,17,16,0.72) 100%); }
+    .hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 0 60px 52px; }
     .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-    .hero-location {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-    }
+    .hero-location { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
     .hero-buttons { display: flex; gap: 12px; align-items: center; }
     #services { padding: 80px 60px; background: var(--off-white); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; max-width: 1100px; margin: 0 auto;
-    }
-    .service-card {
-      background: #fff; overflow: hidden;
-      border: 1px solid var(--mid-gray);
-      transition: transform 0.25s, box-shadow 0.25s;
-      text-decoration: none; color: inherit; display: block;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .service-card { background: #fff; overflow: hidden; border: 1px solid var(--mid-gray); transition: transform 0.25s, box-shadow 0.25s; text-decoration: none; color: inherit; display: block; }
     .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(17,17,16,0.12); }
     .service-img-wrap { overflow: hidden; }
     .service-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform 0.4s; }
@@ -57,8 +29,7 @@
     .service-name { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brown); margin-bottom: 8px; }
     .service-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--black); margin-bottom: 10px; }
     .service-desc { font-size: 14px; line-height: 1.75; color: var(--warm-gray); }
-    .service-link { display: inline-block; margin-top: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 2px; transition: border-color 0.2s; }
-    .service-link:hover { border-color: var(--brown); }
+    .service-link { display: inline-block; margin-top: 16px; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 2px; }
     #about { padding: 90px 60px; background: var(--black); }
     .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-kicker { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 14px; }
@@ -71,42 +42,4 @@
     .about-image-wrap { position: relative; }
     .about-img-accent { position: absolute; top: -16px; left: -16px; width: 60%; height: 60%; border: 1px solid rgba(139,98,66,0.3); pointer-events: none; }
     .about-img { width: 100%; display: block; border: 1px solid rgba(139,98,66,0.15); }
-    #contact { padding: 90px 60px; background: var(--off-white); }
-    .contact-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-    .contact-subtitle { font-size: 16px; line-height: 1.75; color: var(--warm-gray); margin-bottom: 16px; }
-    .contact-email { display: inline-block; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--brown); text-decoration: none; border-bottom: 1px solid rgba(139,98,66,0.35); padding-bottom: 3px; margin-bottom: 48px; transition: border-color 0.2s, color 0.2s; }
-    .contact-email:hover { border-color: var(--brown); color: var(--brown-light); }
-    @media (max-width: 900px) {
-      .services-grid { grid-template-columns: 1fr; max-width: 500px; }
-      .about-inner { grid-template-columns: 1fr; }
-      .about-image-wrap { display: none; }
-      .hero-content { padding: 0 28px 40px; }
-      .hero-buttons { flex-direction: column; align-items: flex-start; gap: 10px; }
-      #services, #about, #contact { padding: 60px 28px; }
-    }
-  </style>
-</head>
-<body>
-
-<div id="site-nav"></div>
-
-<section class="hero" id="top">
-  <img class="hero-img" src="/images/banner.jpg" alt="RAE Homes – Denver Custom Homes" />
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-cta">
-      <span class="hero-location">Denver, Colorado</span>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Build With Us</a>
-        <a href="#services" class="btn-outline">View Our Work</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <p class="section-label">What We Do</p>
-  <h2 class="section-title">Our Services</h2>
-  <div class="services-grid">
-    <a class="service-card" href="/remodels/">
-      <div class="service-img-wrap">
+    #contact {
